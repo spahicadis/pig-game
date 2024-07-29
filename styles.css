@@ -65,9 +65,18 @@ body {
 }
 
 .new-game {
-    position: absolute;
-    top: 5%;
-    left: -%;
-    padding: 0.2rem 2rem;
+    position: absolute;   
 }
+
+.new-game1 {
+    position: absolute;
+    top: 20%;
+}
+
+.new-game2 {
+    position: absolute;
+    top: 50%;
+}
+
+
 

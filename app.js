@@ -11,8 +11,8 @@ const player1 = document.querySelector('.player-1');
 const player2 = document.querySelector('.player-2');
 const roleStat = document.querySelector('.rollResult');
 
-//
 
+//STATEs
 let randomNum = null
 let currentScorePlayer1 = 0;
 let totalScorePlayer1 = 0;
@@ -48,14 +48,27 @@ buttonHoldGame.addEventListener('click', function() {
 
 buttonRollDice.addEventListener('click', function() {
     randomNum = randomNumber()
-    roleStat.innerHTML = randomNum;
+    roleStat.innerHTML = randomNum
 
     if(activePlayer == 'player 1') {
-        currentScorePlayer1+= randomNum
-        scoreEndPlayer1.innerHTML = currentScorePlayer1
-        
-    }
+        currentScorePlayer1+= randomNum;
+        scoreEndPlayer1.innerHTML = currentScorePlayer1;
+        if(currentScorePlayer1 >= 20) {
+            totalScorePlayer1 = currentScorePlayer1;
+            scorePlayer1.innerHTML = totalScorePlayer1;
+            scoreEndPlayer1.innerHTML = '0';
+            activePlayer = 'player 2';
+            player1.style.backgroundColor = 'red';
+            player2.style.backgroundColor = 'blue';
+        } else if (randomNum == 1) {
+            scoreEndPlayer1.innerHTML = '0';
+            activePlayer = 'player 2';
+            player1.style.backgroundColor = 'red';
+            player2.style.backgroundColor = 'blue';
 
+        }
+    }
+console.log(randomNum);
 console.log(currentScorePlayer1);
 })
 

@@ -49,6 +49,7 @@ buttonHoldGame.addEventListener('click', function() {
 buttonRollDice.addEventListener('click', function() {
     randomNum = randomNumber()
     roleStat.innerHTML = randomNum
+    console.log(activePlayer)
 
     if(activePlayer == 'player 1') {
         currentScorePlayer1+= randomNum;
@@ -60,14 +61,41 @@ buttonRollDice.addEventListener('click', function() {
             activePlayer = 'player 2';
             player1.style.backgroundColor = 'red';
             player2.style.backgroundColor = 'blue';
+            currentScorePlayer1 = 0;
+            totalScorePlayer1 = 0;
         } else if (randomNum == 1) {
             scoreEndPlayer1.innerHTML = '0';
             activePlayer = 'player 2';
             player1.style.backgroundColor = 'red';
             player2.style.backgroundColor = 'blue';
+            currentScorePlayer1 = 0;
+            totalScorePlayer1 = 0;
 
         }
     }
+
+     else if(activePlayer == 'player 2') {
+        currentScorePlayer2+=randomNum;
+        scoreEndPlayer2.innerHTML = currentScorePlayer2
+        if(currentScorePlayer2 >= 20) {
+            totalScorePlayer2 = currentScorePlayer2;
+            scorePlayer2.innerHTML = totalScorePlayer2;
+            activePlayer = 'player 1';
+            player2.style.backgroundColor = 'red';
+            player1.style.backgroundColor = 'blue';
+            currentScorePlayer2 = 0;
+            totalScorePlayer2 = 0;
+        } else if(randomNum == 0) {
+            scoreEndPlayer2.innerHTML = '0';
+            activePlayer = 'player 1';
+            player2.style.backgroundColor = 'red';
+            player1.style.backgroundColor = 'blue';
+            currentScorePlayer2 = 0;
+            totalScorePlayer2 = 0;
+        }
+    }
+ 
+console.log(activePlayer)
 console.log(randomNum);
 console.log(currentScorePlayer1);
 })

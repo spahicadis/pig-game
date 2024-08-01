@@ -56,6 +56,10 @@
     
 }
 
+.player-score {
+    font-size: 80px;
+}
+
 .player-current-score {
     line-height: 1.7rem;
 }
@@ -70,10 +74,23 @@
     padding: 12px;
     border-radius: 6px; 
     border: none;
-    background-color: rgba(211, 211, 211, 0.651)
+    background-color: rgba(229, 207, 207, 0.651);
+    cursor: pointer;
 }
 
-.new-game1 {
+.rollResult {
+    position: absolute;
+    top: 45%;
+    right: 48.5%;
+    width: 15px;
+    padding: 12px;
+    border-radius: 20px; 
+    border: none;
+    background-color: rgba(211, 211, 211, 0.651);
+    font-size: 22px;
+}
+
+.roll-game {
     position: absolute;
     top: 60%;
     right: 44.5%;
@@ -81,10 +98,11 @@
     padding: 12px;
     border-radius: 20px; 
     border: none;
-    background-color: rgba(211, 211, 211, 0.651) 
+    background-color: rgba(211, 211, 211, 0.651);
+    cursor: pointer;
 }
 
-.new-game2 {
+.hold-game {
     position: absolute;
     top: 68%;
     right: 46%;
@@ -92,7 +110,8 @@
     padding: 12px;
     border-radius: 20px; 
     border: none;
-    background-color: rgba(211, 211, 211, 0.651) 
+    background-color: rgba(211, 211, 211, 0.651);
+    cursor: pointer;
 }
 
 .info {
@@ -103,7 +122,8 @@
     height: 3rem;
     border: none;
     border-radius: 2rem;
-    background-color: rgba(211, 211, 211, 0.651)
+    background-color: rgba(211, 211, 211, 0.651);
+    cursor: pointer;
 }
 
 

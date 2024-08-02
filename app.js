@@ -13,7 +13,7 @@ const roleStat = document.querySelector('.rollResult');
 
 
 //STATEs
-let randomNum = null
+let randomNum = null;
 let currentScorePlayer1 = 0;
 let totalScorePlayer1 = 0;
 let currentScorePlayer2 = 0;
@@ -36,7 +36,8 @@ buttonHoldGame.addEventListener('click', function() {
         activePlayer = 'player 2'
         player1.style.backgroundColor = 'red';
         player2.style.backgroundColor = 'blue';
-        scorePlayer1.innerHTML = currentScorePlayer1;
+        totalScorePlayer1 = currentScorePlayer1;
+        scorePlayer1.innerHTML = totalScorePlayer1;
         currentScorePlayer1 = 0;
         scoreEndPlayer1.innerHTML = currentScorePlayer1;
     } else if(activePlayer == 'player 2') {
@@ -44,7 +45,8 @@ buttonHoldGame.addEventListener('click', function() {
         activePlayer = 'player 1'
         player1.style.backgroundColor = 'blue';
         player2.style.backgroundColor = 'red';
-        scorePlayer2.innerHTML = currentScorePlayer2;
+        totalScorePlayer2 = currentScorePlayer2
+        scorePlayer2.innerHTML = totalScorePlayer2;
         currentScorePlayer2 = 0;
         scoreEndPlayer2.innerHTML = currentScorePlayer2;
     }

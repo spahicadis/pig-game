@@ -28,12 +28,12 @@ infoButton.addEventListener('click', function() {
 })
 
 function randomNumber() {
-    return Math.floor(Math.random() * 6) + 1
+    return Math.floor(Math.random() * 6) + 1;
 }
 
 buttonHoldGame.addEventListener('click', function() {
     if(activePlayer == 'player 1') {
-        activePlayer = 'player 2'
+        activePlayer = 'player 2';
         player1.style.backgroundColor = 'red';
         player2.style.backgroundColor = 'blue';
         totalScorePlayer1 += currentScorePlayer1;
@@ -42,7 +42,7 @@ buttonHoldGame.addEventListener('click', function() {
         scoreEndPlayer1.innerHTML = currentScorePlayer1;
     } else if(activePlayer == 'player 2') {
         console.log(currentScorePlayer2);
-        activePlayer = 'player 1'
+        activePlayer = 'player 1';
         player1.style.backgroundColor = 'blue';
         player2.style.backgroundColor = 'red';
         totalScorePlayer2 += currentScorePlayer2;
@@ -57,8 +57,8 @@ buttonHoldGame.addEventListener('click', function() {
 
 buttonRollDice.addEventListener('click', function() {
     randomNum = randomNumber()
-    roleStat.innerHTML = randomNum
-    console.log(activePlayer)
+    roleStat.innerHTML = randomNum;
+    console.log(activePlayer);
 
     if(activePlayer == 'player 1') {
         currentScorePlayer1+= randomNum;
@@ -85,7 +85,7 @@ buttonRollDice.addEventListener('click', function() {
 
      else if(activePlayer == 'player 2') {
         currentScorePlayer2+=randomNum;
-        scoreEndPlayer2.innerHTML = currentScorePlayer2
+        scoreEndPlayer2.innerHTML = currentScorePlayer2;
         if(currentScorePlayer2 >= 20) {
             totalScorePlayer2 = currentScorePlayer2;
             scorePlayer2.innerHTML = totalScorePlayer2;
@@ -104,16 +104,16 @@ buttonRollDice.addEventListener('click', function() {
         }
     }
  
-console.log(activePlayer)
+console.log(activePlayer);
 console.log(randomNum);
 console.log(currentScorePlayer1);
-})
+});
 
 buttonNewGame.addEventListener('click', function() {
     activePlayer = 'player 1';
     player1.style.backgroundColor = 'blue';
     player2.style.backgroundColor = 'red';
-     randomNum = null
+     randomNum = null;
      currentScorePlayer1 = 0;
      totalScorePlayer1 = 0;
      currentScorePlayer2 = 0;
@@ -124,7 +124,7 @@ buttonNewGame.addEventListener('click', function() {
      scoreEndPlayer2.innerHTML = '0';
      scorePlayer2.innerHTML = '0';
      
-})
+});
 
 
 

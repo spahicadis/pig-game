@@ -63,45 +63,48 @@ buttonRollDice.addEventListener('click', function() {
     if(activePlayer == 'player 1') {
         currentScorePlayer1+= randomNum;
         scoreEndPlayer1.innerHTML = currentScorePlayer1;
-        if(currentScorePlayer1 >= 20) {
-            totalScorePlayer1 = currentScorePlayer1;
+        if(currentScorePlayer1 >= 20 || totalScorePlayer1 + currentScorePlayer1 >=20) {
+            totalScorePlayer1 += currentScorePlayer1;
             scorePlayer1.innerHTML = totalScorePlayer1;
-            scoreEndPlayer1.innerHTML = '0';
+            currentScorePlayer1 = 0;
+            scoreEndPlayer1.innerHTML = currentScorePlayer1;
+            totalScorePlayer1 = 0;
             activePlayer = 'player 2';
             player1.style.backgroundColor = 'red';
             player2.style.backgroundColor = 'blue';
+        }   else if (randomNum == 1) {
             currentScorePlayer1 = 0;
+            scoreEndPlayer1.innerHTML = currentScorePlayer1;
             totalScorePlayer1 = 0;
-        } else if (randomNum == 1) {
-            scoreEndPlayer1.innerHTML = '0';
+            scorePlayer1.innerHTML = totalScorePlayer1;
             activePlayer = 'player 2';
             player1.style.backgroundColor = 'red';
             player2.style.backgroundColor = 'blue';
-            currentScorePlayer1 = 0;
-            totalScorePlayer1 = 0;
-
-        }
+        } 
     }
 
      else if(activePlayer == 'player 2') {
         currentScorePlayer2+=randomNum;
         scoreEndPlayer2.innerHTML = currentScorePlayer2;
-        if(currentScorePlayer2 >= 20) {
-            totalScorePlayer2 = currentScorePlayer2;
+        if(currentScorePlayer2 >= 20 || totalScorePlayer2 + currentScorePlayer2 >=20) {
+            totalScorePlayer2 += currentScorePlayer2;
+            scorePlayer2.innerHTML = totalScorePlayer2;
+            currentScorePlayer2 = 0;
+            scoreEndPlayer2.innerHTML = currentScorePlayer2;
+            totalScorePlayer2 = 0;
+            activePlayer = 'player 1';
+            player2.style.backgroundColor = 'red';
+            player1.style.backgroundColor = 'blue';
+        }  else if(randomNum == 1) {
+            currentScorePlayer2 = 0;
+            scoreEndPlayer2.innerHTML = currentScorePlayer2;
+            totalScorePlayer2 = 0;
             scorePlayer2.innerHTML = totalScorePlayer2;
             activePlayer = 'player 1';
             player2.style.backgroundColor = 'red';
             player1.style.backgroundColor = 'blue';
-            currentScorePlayer2 = 0;
-            totalScorePlayer2 = 0;
-        } else if(randomNum == 1) {
-            scoreEndPlayer2.innerHTML = '0';
-            activePlayer = 'player 1';
-            player2.style.backgroundColor = 'red';
-            player1.style.backgroundColor = 'blue';
-            currentScorePlayer2 = 0;
-            totalScorePlayer2 = 0;
         }
+        
     }
  
 console.log(activePlayer);
